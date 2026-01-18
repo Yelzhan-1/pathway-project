@@ -1,0 +1,46 @@
+{
+  "universities": [
+    {
+      "id": 1,
+      "name": "NazarbaevUniversity",
+      "country": "Kazakhstan"
+    },
+    {
+      "id": 2,
+      "name": "KIMEP University",
+      "country": "Kazakhstan"
+    },
+    {
+      "id": 3,
+      "name": "Stanford",
+      "country": "USA"
+    },
+    {
+      "id": 4,
+      "name": "MIT",
+      "country": "USA"
+    }
+  ],
+  "users": [
+    {
+      "email": "olivier22@mail.com",
+      "password": "$2a$10$Ju9UzXxMWR.ghUcSJDGvceyh3VGZPHquXBX2GbbluVGxElBLle0.2",
+      "firstname": "Olivier",
+      "lastname": "Monge",
+      "age": 32,
+      "id": 1
+    },
+    {
+      "email": "elzhan.2401@gmail.com",
+      "password": "$2a$10$c1ArpKU6X/QOS5Vq7LtePepGm.oTBC3iCKewZh7KBIMMZwk.mlfFG",
+      "name": "Yelzhan",
+      "id": 2
+    },
+    {
+      "email": "admin@mail.ru",
+      "password": "$2a$10$c/ySHTtUwdY/wCLge9KSMO4L3Ms4HiJC.eFuXYlU2xqWdFqs.ni7m",
+      "name": "admin",
+      "id": 3
+    }
+  ]
+}

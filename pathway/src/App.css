@@ -40,3 +40,24 @@
 .read-the-docs {
   color: #888;
 }
+
+.register-page, .login-page {
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.register-form, .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.register-form .register-button, .login-form .login-button {
+    margin-top: 20px;
+}
