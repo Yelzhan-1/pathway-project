@@ -6,24 +6,52 @@ const NavBar = () => {
 
   function logoutHandler() {
     localStorage.removeItem("accessToken");
+    localStorage.removeItem("user");
     window.location.reload();
   }
 
   return (
     <header className="navbar">
       <div className="navbar-container">
-        {/* LEFT: Logo/Brand */}
         <Link className="navbar-brand" to="/">
           Pathway
         </Link>
 
         <nav className="navbar-links">
-          <Link className="navbar-link" to="/">
-            Home
-          </Link>
-          <Link className="navbar-link" to="/universities">
-            Universities
-          </Link>
+          {!authorized ? (
+            <>
+              <Link className="navbar-link" to="/">
+                Home
+              </Link>
+              <Link className="navbar-link" to="/universities">
+                Universities
+              </Link>
+              <Link className="navbar-link" to="/careers">
+                Careers
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link className="navbar-link" to="/">
+                Home
+              </Link>
+              <Link className="navbar-link" to="/universities">
+                Universities
+              </Link>
+              <Link className="navbar-link" to="/planner">
+                Planner
+              </Link>
+              <Link className="navbar-link" to="/path">
+                Path
+              </Link>
+              <Link className="navbar-link" to="/favorites">
+                Favorites
+              </Link>
+              <Link className="navbar-link" to="/profile">
+                Profile
+              </Link>
+            </>
+          )}
         </nav>
 
         <div className="navbar-actions">

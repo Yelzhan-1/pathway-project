@@ -42,5 +42,14 @@
       "name": "admin",
       "id": 3
     }
+  ],
+  "plannerTasks": [
+    {
+      "title": "IELTS",
+      "done": false,
+      "userId": 3,
+      "createdAt": "2026-01-25T09:22:28.092Z",
+      "id": 1
+    }
   ]
 }

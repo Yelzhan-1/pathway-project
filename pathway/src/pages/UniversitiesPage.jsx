@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import SearchForm from "../components/SearchForm.jsx";
 import FilterSidebar from "../components/FilterSidebar.jsx";
-import { SlidersHorizontal, X } from "lucide-react";
+import { SlidersHorizontal, X, Heart } from "lucide-react";
+import { getUniversities } from "../services/universityService.js";
+import { Link } from "react-router-dom";
+
 
 const UniversitiesPage = () => {
     const universities = [
@@ -880,18 +883,17 @@ const UniversitiesPage = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   async function fetchUniversities() {
-    setLoading(true);
+  setLoading(true);
     try {
-      const res = await fetch("http://localhost:3001/universities");
-      if (!res.ok) throw new Error("Failed to fetch universities");
-      const data = await res.json();
-      setUniversitiesData(data);
-    } catch (e) {
-      console.log("API not found, using local data");
-      setUniversitiesData(universities);
-    }
-    setLoading(false);
+      const data = await getUniversities();
+        setUniversitiesData(data);
+  } catch (e) {
+        console.log("API not found, using local data");
+        setUniversitiesData(universities);
   }
+  setLoading(false);
+}
+
 
   useEffect(() => {
     fetchUniversities();
@@ -931,62 +933,98 @@ const UniversitiesPage = () => {
     return matchCountry && matchName;
   });
 
-  return (
+  function getFavs() {
+  return JSON.parse(localStorage.getItem("favorites") || "[]");
+}
+
+function toggleFav(id) {
+  const favs = getFavs();
+  if (favs.includes(id)) {
+    localStorage.setItem("favorites", JSON.stringify(favs.filter((x) => x !== id)));
+  } else {
+    localStorage.setItem("favorites", JSON.stringify([...favs, id]));
+  }
+  setUniversitiesData((prev) => [...prev]);
+}
+
+function isFav(id) {
+  return getFavs().includes(id);
+}
+
+
+    return (
     <div className="universities-page">
-      <h1>Universities</h1>
+        <h1>Universities</h1>
 
-      <SearchForm onSearchHandler={onSearchHandler} />
+     <div className="universities-toolbar">
+        <SearchForm onSearchHandler={onSearchHandler} />
+            <button className="filter-button" onClick={() => setIsFilterOpen(true)}>
+                <SlidersHorizontal size={20} />
+                <span>Filters</span>
+            </button>
+        </div>
 
-      <button className="filter-button" onClick={() => setIsFilterOpen(true)}>
-        <SlidersHorizontal size={20} />
-        <span>Filters</span>
-      </button>
 
-      <div className="universities-content">
-        <FilterSidebar
-          onFilterHandler={onFilterHandler}
-          filterOptions={filters}
-          universities={universitiesData}
-        />
+    <div className="universities-content">
+      
 
-        <div className="universities-list">
-          {loading ? (
-            <>Loading...</>
-          ) : (
-            <ul>
-              {filteredUniversities.map((u) => (
-                <li key={u.id}>
+      <div className="universities-list">
+        {loading ? (
+          <>Loading...</>
+        ) : (
+          <ul>
+            {filteredUniversities.map((u) => (
+              <li key={u.id} className="university-item">
+                <div className="university-left">
                   <b>{u.name}</b> — {u.country}
-                </li>
-              ))}
-            </ul>
-          )}
+                </div>
+
+                <div className="university-right">
+                  <button
+                    className="fav-btn"
+                    onClick={() => toggleFav(u.id)}
+                    type="button"
+                  >
+                    <Heart
+                      size={18}
+                      fill={isFav(u.id) ? "currentColor" : "none"}
+                    />
+                  </button>
+
+                  <Link className="details-link" to={`/universities/${u.id}`}>
+                    Details
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+
+    {isFilterOpen && (
+      <div className="filter-menu">
+        <div className="filter-menu-content">
+          <button
+            className="filter-modal-close"
+            onClick={() => setIsFilterOpen(false)}
+          >
+            <X size={24} />
+          </button>
+
+          <h2>Filters</h2>
+
+          <FilterSidebar
+            filterOptions={filters}
+            className="filter-mobile-menu"
+            onFilterHandler={onFilterHandler}
+            universities={universitiesData}
+          />
         </div>
       </div>
-
-      {isFilterOpen && (
-        <div className="filter-menu">
-          <div className="filter-menu-content">
-            <button
-              className="filter-modal-close"
-              onClick={() => setIsFilterOpen(false)}
-            >
-              <X size={24} />
-            </button>
-
-            <h2>Filters</h2>
-
-            <FilterSidebar
-              filterOptions={filters}
-              className="filter-mobile-menu"
-              onFilterHandler={onFilterHandler}
-              universities={universitiesData}
-            />
-          </div>
-        </div>
-      )}
-    </div>
-  );
+    )}
+  </div>
+);
 };
 
 export default UniversitiesPage;
