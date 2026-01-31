@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import "./App.css";
 
 
 import HomePage from "./pages/HomePage.jsx";
@@ -15,6 +16,7 @@ import PathPage from "./pages/PathPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import ProfilePage from "./pages/ProfilePage";
 import UniversityDetailsPage from "./pages/UniversityDetailsPage";
+import UniversitiesAdminPage from "./pages/UniversitiesAdminPage";
 
 
 
@@ -36,6 +38,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/universities/:id" element={<UniversityDetailsPage />} />
+        <Route path="/universities-admin" element={<UniversitiesAdminPage />} />
 
       </Routes>
     </BrowserRouter>

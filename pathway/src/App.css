@@ -61,3 +61,13 @@
 .register-form .register-button, .login-form .login-button {
     margin-top: 20px;
 }
+
+.register-button, .login-button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}

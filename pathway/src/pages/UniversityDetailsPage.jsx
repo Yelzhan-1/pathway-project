@@ -78,6 +78,38 @@ const UniversityDetailsPage = () => {
               <p className="details-label">ID</p>
               <p className="details-value">{university.id}</p>
             </div>
+
+            <div className="details-item">
+              <p className="details-label">City</p>
+              <p className="details-value">{university.city}</p>
+            </div>
+
+            <div className="details-item">
+              <p className="details-label">Website</p>
+              <p className="details-value">{university.website}</p>
+            </div>
+
+            <div className="details-item">
+              <p className="details-label">Deadline</p>
+              <p className="details-value">{university.deadline}</p>
+            </div>
+
+            <div className="details-item">
+              <p className="details-label">Tuition</p>
+              <p className="details-value">{university.tuition}</p>
+            </div>
+
+            <div className="details-item">
+              <p className="details-label">Language</p>
+              <p className="details-value">{university.language}</p>
+            </div>
+
+            <div className="details-item">
+              <p className="details-label">Programs</p>
+              <p className="details-value">
+                {university.programs.join(", ")}
+              </p>
+            </div>
           </div>
         </div>
       )}

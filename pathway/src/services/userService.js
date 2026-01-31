@@ -11,6 +11,7 @@ export async function registerUser(name, email, password) {
     throw new Error("Failed to register user");
     }
 
+
     return response.json();
 }
 

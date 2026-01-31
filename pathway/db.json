@@ -2,8 +2,42 @@
   "universities": [
     {
       "id": 1,
-      "name": "NazarbaevUniversity",
-      "country": "Kazakhstan"
+      "name": "NazarbaevUniversity2",
+      "country": "KG",
+      "city": "Astana",
+      "website": "https://nu.edu.kz/",
+      "deadline": "September 29 – November 28, 2025 (until 14:00 Astana time).",
+      "tuition": "$12,000 - $18,375 per year.",
+      "language": "English",
+      "programs": [
+        "Chemical Engineering",
+        "Civil and Environmental Engineering",
+        "Electrical and Computer Engineering",
+        "Mechanical and Aerospace Engineering",
+        "Computer Science",
+        "Robotics and Mechatronics",
+        "Biological Sciences",
+        "Chemistry",
+        "Mathematics",
+        "Physics",
+        "Anthropology",
+        "Economics",
+        "History",
+        "Languages and Literature",
+        "Political Science and International Relations",
+        "Sociology",
+        "Geology",
+        "Mining Engineering",
+        "Petroleum Engineering",
+        "Business Administration",
+        "Public Policy",
+        "Public Administration",
+        "Educational Leadership",
+        "Nursing",
+        "Medicine",
+        "Public Health",
+        "Medical Sciences."
+      ]
     },
     {
       "id": 2,
@@ -19,6 +53,11 @@
       "id": 4,
       "name": "MIT",
       "country": "USA"
+    },
+    {
+      "name": "KazNU",
+      "country": "Kazakhstan",
+      "id": 5
     }
   ],
   "users": [
@@ -41,6 +80,30 @@
       "password": "$2a$10$c/ySHTtUwdY/wCLge9KSMO4L3Ms4HiJC.eFuXYlU2xqWdFqs.ni7m",
       "name": "admin",
       "id": 3
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$X3A3S/vnJRxfKTGcnayqlOOBbknlxdlnofpGe.neQ2qVFfbG.GIkm",
+      "name": "admin",
+      "id": 4
+    },
+    {
+      "email": "abc@mail.ru",
+      "password": "$2a$10$fNUHleRl/VKM6aVqWPLDqO8g4HDajlA6m/gCWyZRxKqt47sK6I6Nm",
+      "name": "yelzhan",
+      "id": 5
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "$2a$10$.Wio4PIK5VfQfl.2/CJll.xA1rAYWQKzHQvhzq6KBcoTtxkzOcPh6",
+      "name": "abc",
+      "id": 6
+    },
+    {
+      "email": "abcd@mail.ru",
+      "password": "$2a$10$oEfvyEpCNC7keuVszYL8gOIOpF5z1D2.GaElboIJXeSaSbHHKbPTe",
+      "name": "abcd",
+      "id": 7
     }
   ],
   "plannerTasks": [
