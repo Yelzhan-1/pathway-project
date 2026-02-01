@@ -8,9 +8,8 @@ export async function registerUser(name, email, password) {
     });
 
     if (!response.ok) {
-    throw new Error("Failed to register user");
+        throw new Error("Failed to register user");
     }
-
 
     return response.json();
 }
@@ -20,21 +19,21 @@ export async function loginUser(email, password) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
-  });
+    });
 
-        if (!response.ok) {
+    if (!response.ok) {
         throw new Error("Failed to login user");
-  }
+    }
 
-  const data = await response.json();
+    const data = await response.json();
 
 
     if (data?.accessToken) {
         localStorage.setItem("token", data.accessToken);
-  }
+    }
     if (data?.user) {
         localStorage.setItem("user", JSON.stringify(data.user));
-  }
+    }
 
   return data;
 }

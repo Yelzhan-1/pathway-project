@@ -71,9 +71,6 @@ const PlannerPage = () => {
     loadTasks();
   }, [userId]);
 
-  console.log("USER:", user);
-console.log("USER ID:", userId);
-
 
   return (
     <div className="page">

@@ -21,6 +21,9 @@ const RegisterPage = () => {
             alert("Passwords do not match");
             return;
         }
+
+        // Validate if filds are not empty
+
         try {
             const result = await registerUser(name, email, password);
             console.log("Registration successful:", result);
