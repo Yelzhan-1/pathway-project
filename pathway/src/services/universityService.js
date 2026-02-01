@@ -8,15 +8,15 @@ function authHeaders() {
 
 export async function getUniversities() {
     const res = await fetch(BASE_URL + "/universities");
-        if (!res.ok) throw new Error("Failed to fetch universities");
-        return res.json();
+    if (!res.ok) throw new Error("Failed to fetch universities");
+    return res.json();
 }
 
 
 export async function getUniversityById(id) {
     const res = await fetch(BASE_URL + `/universities/${id}`);
     if (!res.ok) throw new Error("Failed to fetch university");
-        return res.json();
+    return res.json();
 }
 
 export async function createUniversity(universityData) {
@@ -40,7 +40,7 @@ export async function updateUniversity(id, universityData) {
          ...authHeaders(),
     },
         body: JSON.stringify(universityData),
-  });
+    });
 
     if (!res.ok) throw new Error("Failed to update university");
     return res.json();
@@ -52,9 +52,9 @@ export async function deleteUniversity(id) {
         method: "DELETE",
         headers: {
         ...authHeaders(),
-    },
-  });
+        },
+    });
 
-  if (!res.ok) throw new Error("Failed to delete university");
+    if (!res.ok) throw new Error("Failed to delete university");
     return true;
 }
