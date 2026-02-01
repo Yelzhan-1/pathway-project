@@ -41,7 +41,7 @@ const FilterSidebar = ({ onFilterHandler, className = "", filterOptions, univers
         <h2>Countries</h2>
         <ul>
           {countries.map((country, index) => (
-            <li key={index}>
+            <li className="filter-item" key={index}>
               <input
                 type="checkbox"
                 value={country}
@@ -60,7 +60,7 @@ const FilterSidebar = ({ onFilterHandler, className = "", filterOptions, univers
         <h2>Universities</h2>
         <ul style={{ maxHeight: "250px", overflowY: "auto" }}>
           {names.map((name, index) => (
-            <li key={index}>
+            <li className="filter-item" key={index}>
               <input
                 type="checkbox"
                 value={name}
