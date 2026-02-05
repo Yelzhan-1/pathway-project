@@ -1,73 +1,33 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 .register-page, .login-page {
-    padding: 40px;
-    max-width: 700px;
-    width: 100%;
-    margin: auto;
-    text-align: center;
+  padding: 40px 16px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .register-form, .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 40px;
-}
-
-.register-form .register-button, .login-form .login-button {
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(400px, 100%);
+  margin: 0 auto;
+  margin-top: 24px;
 }
 
 .register-button, .login-button {
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background-color: #000000;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }
